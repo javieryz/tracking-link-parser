@@ -41,7 +41,6 @@ def get_service():
 
 def get_messages(service):
     yesterday = date.today() - timedelta(days = 1)
-    print(yesterday)
     query = [f'after:{yesterday} track']
     try:
         results = service.users().messages().list(userId='me', q=query).execute()
@@ -116,7 +115,7 @@ if __name__ == '__main__':
     links = search_links(filepath)
 
     if links:
-        """
+        
         account_sid = '[YOUR_ACCOUNT_SID]' 
         auth_token = '[YOUR_AUTH_TOKEN]' 
         client = Client(account_sid, auth_token) 
@@ -128,6 +127,6 @@ if __name__ == '__main__':
                                         to='whatsapp:[YOUR_PHONE_NUMBER]' 
                                     ) 
 
-        """
+        
     else:
         print('No tracking links found')
